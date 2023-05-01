@@ -1,0 +1,52 @@
+@extends('layout.admin')
+
+@section('title','Harian - Informasi Statistik')
+
+@section('container')
+	<div class="container">	
+			<div class="row">
+				<div class="col-md-12">
+					<div class="contact-form">
+						<div class="widget-inner">
+						<form action="{{route('infostatistikAdmin.update',$edits->id_info_statistik)}}" method="post" id="contact-form" enctype="multipart/form-data">	
+                            {{ csrf_field() }}
+							<div class="row">
+								<div class="col-md-6">
+									<p>
+										<label for="nama_tempat">Nama Desa :</label>
+										<input type="text" name="nama_tempat" id="name" value="{{$edits->nama_tempat}}">
+									</p>
+								</div>
+								<div class="col-md-6">
+									<p>
+										<label for="kepala_desa">Kepala Desa :</label>
+										 <input type="text" name="kepala_desa" id="name" value="{{$edits->kepala_desa}}">
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<p>
+										<label for="pria">Jumlah Pria :</label>
+										<input type="number" name="pria" id="name" min="0" value="{{$edits->pria}}">
+									</p>
+								</div>
+								<div class="col-md-6">
+									<p>
+										<label for="wanita">Jumlah Wanita :</label>
+										<input type="number" name="wanita" id="name" min="0" value="{{$edits->wanita}}">
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<button class="mainBtn" id="submit" type="submit"><i class="far fa-edit"></i> Edit</button>
+								</div>
+							</div>
+						</form>
+					  </div> <!-- /.widget-inner -->
+					</div> <!-- /.contact-form -->
+			</div> <!-- /.row -->
+		</div> <!-- /.col-md-8 -->
+	</div> <!-- /.container -->	
+@endsection
